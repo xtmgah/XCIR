@@ -1,5 +1,5 @@
 
-......#' Fit mixture model
+#' Fit mixture model
 #'
 #' Fit a mixture model to estimate mosaicism and XCI-escape.
 #'

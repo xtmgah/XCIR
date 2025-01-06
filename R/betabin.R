@@ -1,4 +1,5 @@
-#' Fit mixture model
+
+......#' Fit mixture model
 #'
 #' Fit a mixture model to estimate mosaicism and XCI-escape.
 #'
@@ -112,8 +113,8 @@ betaBinomXI <- function(genic_dt,  model = "AUTO", plot = FALSE, hist = FALSE,
   dt[, ivw_tau := tau/sqrt(var_tau)]
 
   # Adjusted p-values
-  dt[, adj_pvalue_bh := p.adjust(pvalue, method = "BH"), by = "sample"]
-  dt[, adj_pvalue_bc := p.adjust(pvalue, method = "bonferroni"), by = "sample"]
+  dt[, adj_pvalue_bh := p.adjust(p_value, method = "BH"), by = "sample"]
+  dt[, adj_pvalue_bc := p.adjust(p_value, method = "bonferroni"), by = "sample"]
   
   if(hist){
     hist(unique(dt[, f]), breaks = seq(0, .5, .01), main = "Cell fraction", xlab="Cell fraction", ylab = "samples")
